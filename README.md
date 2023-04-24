@@ -1,5 +1,5 @@
 Tutoriel:
-Placer un terminal dans le Fichier "pw6-fellou-niako"
+Placer un terminal dans le Repertoire contenant les fichiers
 
 Base de données:
 -tapez la commande: sudo service postgresql start (si besoin)
