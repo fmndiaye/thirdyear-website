@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="bootstrap.min.css">
+	<link rel="stylesheet" href="header.css">
+  </head>
+  <header class="head">
+    <div id="title" class="page-header text-left">
+	  <h1><span class="PizzaLogo">PIZZERIA </span>ONLINE</h1>
+	</div>
+	<div class="navigateur">
+	  <a href="pizzeria">ACCUEIL</a>
+	  <a href="carte">LA CARTE</a>
+	</div>
+	<div class="login">
+	<% if (data.livreur == null) { %>
+	  <a href="livraison">CONNEXION LIVREUR</a>
+	<% } else { %>
+	  <a href="disconnect">SE DECONNECTER</a>
+	  <% } %>
+	</div>
+	<div class="cart">
+		<div class="badge"><%= data.articles %></div>
+		<a href="panier"><img src="images/panier.png">MON PANIER</a>
+	</div>
+  </header>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+	<meta charset="utf-8">
+	<title>PIZZERIA ONLINE | LIVRAISON</title>
+	<script src="jquery-3.6.0.js"></script>
+	<script src="bootstrap.min.js"></script>
+	<script src="header.js"></script>
+	<link rel="stylesheet" href="bootstrap.min.css">
+	<link rel="stylesheet" href="livraison.css">
+  </head>
+  <body>
+  	<div id="included"></div>
+  	<div id="error"></div> <!--Affiche l'erreur trouver-->
+  	<%if (data.login == null) { %>
+  	  <div class="form">
+  	    <h1>Connexion pour livreur</h1>
+  	    <form id="formulaire" method="post" action="livraison">
+  	  	  <table>
+  	  	    <tbody>
+  	  	  	  <tr>
+  	  	  	    <th scope="row">Nom d'utilisateur</th>
+  	  	  	    <td><input type="text" id="nom" name="nom" 
+  	  	  	  	  placeholder="Nom d'utilisateur" required></td>
+  	  	  	  </tr>
+  	  	  	  <tr>
+  	  	  	    <th scope="row">Mot de passe</th>
+  	  	  	    <td><input type="password" id="mdp" name="mdp" 
+  	  	  	  	  placeholder="Mot de passe" required></td>
+  	  	  	  </tr>
+  	  	    </tbody>
+  	  	  </table>
+  	  	  <input type="submit" id="valider">
+  	  	  <a href="/">
+  	  	    <input type="button" value="Annuler">
+  	  	  </a>
+  	  	  <% if (data.check == 0) { %>
+  	  	    <div>
+  	  	  	  <p id="wrong">Mauvais nom d'utilisateur où mot de passe!<br>
+  	  	  	  Veuillez réessayer</p> 
+  	  	    </div>
+  	  	  <% } %>
+  	    </form>
+  	  </div>
+  	<% } else {%>
+  	  <div id="livreur">
+  	  	<h1>Bienvenue, <%= data.login %></h1>
+  	  	<h2>Liste de livraison disponible:</h2>
+  	  	<div id="commande">
+  	  	  <%if (data.commande.length != 0 || data.check2 != 0){ %>
+  	  	    <% for (let i = 0; i < data.donnees.length; i++) { %>
+  	  	    <div id="each">
+  	  	  	  <table id="tab">
+  	  	  	    <tbody>
+  	  	  	  	  <tr>
+  	  	  	  	    <strong>Commande numéro <%= i + 1 %>:</strong>
+  	  	  	  	  </tr>
+  	  	  	  	  <%let x = data.commande[i].listeItem();
+  	  	  	  	  for (let j = 0; j < x.length; j++) { %>
+  	  	  	  	    <tr>
+  	  	  	  	      <td>
+  	  	  	  	       <%=x[j].item.nom %> x <%= x[j].qté %>, <%= x[j].prix %>€
+  	  	  	  	      </td>
+  	  	  	  	    </tr>
+  	  	  	  	  <% } %>
+  	  	  	  	  <tr>
+  	  	  	  	  	<td>
+  	  	  	  	      Prix total: <%= data.commande[i].prixTotal %>€
+  	  	  	  	    </td>
+  	  	  	  	  </tr>
+  	  	  	    </tbody>
+  	  	  	  </table>
+  	  	  	  <table id="tab2">
+  	  	  	  	<tr>
+  	  	  	  	  <strong>Addresse:</strong>
+  	  	  	  	</tr>
+  	  	  	  	<tr>
+  	  	  	  	  <td>
+  	  	  	  	    <%= data.donnees[i].nom %> <%= data.donnees[i].prenom %>
+  	  	  	  	  </td>
+  	  	  	  	</tr>
+  	  	  	  	<tr>
+  	  	  	  	  <td>
+  	  	  	  	  	<%= data.donnees[i].addresse %>
+  	  	  	  	  </td>
+  	  	  	  	</tr>
+  	  	  	  	<tr>
+  	  	  	  	  <td>
+  	  	  	  	  	<%= data.donnees[i].addresse2 %>
+  	  	  	  	  </td>
+  	  	  	  	</tr>
+  	  	  	  	<tr>
+  	  	  	  	  <td>
+  	  	  	  	  	<%= data.donnees[i].ville %>
+  	  	  	  	  </td>
+  	  	  	  	</tr>
+  	  	  	  	<tr>
+  	  	  	  	  <td>
+  	  	  	  	  	<%= data.donnees[i].code_postal %>
+  	  	  	  	  </td>
+  	  	  	  	</tr>
+  	  	  	  	<tr>
+  	  	  	  	  <td>
+  	  	  	  	  	<%= data.donnees[i].numerotel %>
+  	  	  	  	  </td>
+  	  	  	  	</tr>
+  	  	  	  	<tr>
+  	  	  	  	  <td>
+  	  	  	  	    <%= data.donnees[i].email %>
+  	  	  	  	  </td>
+  	  	  	  	</tr>
+  	  	  	  	<tr>
+  	  	  	  	  <td>
+  	  	  	  	    code d'entrée: <%= data.donnees[i].code_entree %>
+  	  	  	  	  </td>
+  	  	  	  	</tr>
+  	  	  	  	<tr>
+  	  	  	  	  <td>
+  	  	  	  	    Doit être livré à: <%= data.donnees[i].heure %>
+  	  	  	  	  </td>
+  	  	  	  	</tr>
+  	  	  	  </table>
+  	  	    </div>
+  	  	    <% if (data.donnees[i].charge == 0){ %>
+  	  	  	  <a href="/encharge/<%=data.donnees[i].id%>">
+  	  	  	  	<input type=button value="prendre en charge" id="bouton">
+  	  	  	  </a>
+  	  	  	<% } else if (data.livreur.cid == data.donnees[i].id) { %>
+  	  	  		<a href="/livre/<%=data.donnees[i].id%>/<%=data.livreur.id%>">
+  	  	  	  	  <input type=button value="Livraison terminée" id="bouton">
+  	  	  	    </a>
+  	  	  	<% } else { %>
+  	  	  	  <p id="prit">
+  	  	        Cette commande est déjà prit en charge par un autre livreur
+  	  	      </p>
+  	  	  	<% } %>
+  	  	  <% } %>
+  	  	<% } else {%>
+  	  		<p>Aucune commande disponible </p>
+  	  	<% } %>
+  	  	</div>
+  	<% } %>
+  </body>
+</html>

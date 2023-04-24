@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+	  <meta charset="utf-8">
+	  <title>PIZZERIA ONLINE | LA CARTE</title>
+	  <script src="jquery-3.6.0.js"></script>
+	  <script src="bootstrap.min.js"></script>
+	  <script src="header.js"></script>
+	  <script src="carte.js"></script>
+	  <script src="panier.js"></script>
+    <script src="cart.js"></script>
+	  <link rel="stylesheet" href="bootstrap.min.css">
+	  <link rel="stylesheet" href="carte.css">
+	  <link rel="stylesheet" href="cadre.css">
+  </head>
+  <body>
+  	<div id="included"></div>
+  	<div id="error"></div> <!--Affiche l'erreur trouver-->
+  	<header class="h">
+  	  <div class="nav2">
+	    <a href="carte" id="PizzaPre">PIZZAS</a>
+	    <a href="" id="Entrees" onclick="return false;">ENTRÉES & SALADES</a>
+	    <a href="" id="Boissons" onclick="return false;" >BOISSONS</a>
+	    <a href="" id="Menus" onclick="return false;">MENUS</a>
+	  </div>
+    </header>
+    <div id="contenu_pizza">
+      <h1 class="titre">LES PIZZAS</h1>
+      <hr/>
+      <div class="menu">
+        <div class="cadre">
+          <img src="images/<%= data.pizzaPre[0].nom %>.jpg" class="food">
+          <!-- utilise ejs pour afficher les données --> 
+          <div class="description">
+            <h1><%= data.pizzaPre[0].nom %></h1>
+            <p>
+              Classique 4 Fromage avec Tomate bio, 
+              mozzarella, chèvre, Gorgonzola et Parmesan. <br>
+              <br>
+            </p>
+            <div id ="deroule">
+              <select id="TailleP4">
+                <option value="none" selected disabled hidden>Taille</option>
+                <option value="0">Petite</option>
+                <option value="1">Moyenne</option>
+                <option value="2">Grande</option>
+              </select>
+            </div>
+            <input type="hidden" id="1p4" value="<%= data.pizzaPre[0].prix %>">
+            <input type="hidden" id="2p4" value="<%= data.pizzaPre[1].prix %>">
+            <input type="hidden" id="3p4" value="<%= data.pizzaPre[2].prix %>">
+            <input type="hidden" id="id1p4" value="<%= data.pizzaPre[0].id %>">
+            <input type="hidden" id="id2p4" value="<%= data.pizzaPre[1].id %>">
+            <input type="hidden" id="id3p4" value="<%= data.pizzaPre[2].id %>">
+            <div class="prix" id ="prixP4"><%= data.pizzaPre[0].prix %>€</div>
+          </div>
+          <a href="add-to-cart/<%= data.pizzaPre[0].id %>" id ="addP4">
+            <input type="button" class="addcart" value="COMMANDER">
+          </a>
+        </div>
+      <div class="cadre">
+          <img src="images/<%= data.pizzaPre[3].nom %>.jpg" class="food">
+          <div class="description">
+            <h1><%= data.pizzaPre[3].nom %></h1>
+            <p>
+              Classique 4 Fromage avec Tomate bio, 
+              mozzarella, chèvre, Gorgonzola et Parmesan. <br>
+              <br>
+            </p>
+            <div id ="deroule">
+              <select id="TaillePO">
+                <option value="none" selected disabled hidden>Taille</option>
+                <option value="3">Petite</option>
+                <option value="4">Moyenne</option>
+                <option value="5">Grande</option>
+              </select>
+            </div>
+            <input type="hidden" id="1po" value="<%= data.pizzaPre[3].prix %>">
+            <input type="hidden" id="2po" value="<%= data.pizzaPre[4].prix %>">
+            <input type="hidden" id="3po" value="<%= data.pizzaPre[5].prix %>">
+            <input type="hidden" id="id1po" value="<%= data.pizzaPre[3].id %>">
+            <input type="hidden" id="id2po" value="<%= data.pizzaPre[4].id %>">
+            <input type="hidden" id="id3po" value="<%= data.pizzaPre[5].id %>">
+            <div class="prix" id="prixPO"><%= data.pizzaPre[3].prix %>€</div>
+          </div>
+          <a href="add-to-cart/<%= data.pizzaPre[3].id %>" id="addPO">
+            <input type="button" class="addcart" value="COMMANDER">
+          </a>
+        </div>
+      </div>
+    </div>
+    <div id="contenu_entrees">
+      <h1 class="titre">LES ENTRÉES</h1>
+      <hr/>
+      <div class="menu">
+  	    <div class="cadre">
+  	      <img src="images/ceasar.jpg" class="food">	
+  	      <div class="description">
+            <!-- Récupère les prix pour garder l'affichage ejs avec carte.js-->
+            <input type="hidden" value="<%= data.Entrees[0].prix %>" id="csr">
+            <input type="hidden" value="<%= data.Entrees[1].prix %>" id="chk">
+
+            <input type="hidden" value="<%= data.Entrees[0].id %>" id="idcsr">
+            <input type="hidden" value="<%= data.Entrees[1].id %>" id="idchk">
+  	        <h1><%= data.Entrees[0].nom %></h1>
+  	        <p>
+  	          Mélange de salades, émincés de poulet rôti, <br>
+  	          fromage italien, tomates cerises, croûtons <br>
+  	          grillés.
+  	        </p>
+            <div id ="deroule">
+              <select id = "Sauce1">
+                <option value="none" selected disabled hidden>Sauce</option>
+                <option value="none">Sans sauce</option>
+                <% data.Sauce.forEach(s=>{ %>
+                  <option value="<%= data.Entrees[0].id %>/<%= s.id %>">
+                    <%= s.nom %></option>
+                <% }) %>
+              </select>
+            </div>
+  	        <div class="prix" id="prixS1"><%= data.Entrees[0].prix %>€</div>
+  	      </div>
+            <a href="add-to-cart/<%= data.Entrees[0].id %>" id ="ceasar">
+              <input type="button" class="addcart" value="COMMANDER">
+            </a>
+  	    </div>	
+        <div class="cadre">
+          <img src="images/chicken.jpg" class="food">
+          <div class="description">
+            <h1><%= data.Entrees[1].nom %></h1>
+            <p>
+              20 morceaux d'ailes de poulet marinés au <br>
+              poivre et piment doux. Servis avec 1 sauce <br>
+              au choix.
+            </p>
+            <div id ="deroule">
+              <select id="Sauce2">
+                <option value="none" selected disabled hidden>Sauce</option>
+                <option value="none">Sans sauce</option>
+                <% data.Sauce.forEach(s=>{ %>
+                  <option value="<%= data.Entrees[1].id %>/<%= s.id %>">
+                    <%= s.nom %></option>
+                <% }) %>
+              </select>
+            </div>
+            <div class="prix" id="prixS2"><%= data.Entrees[1].prix %>€</div>
+          </div>
+            <a href="add-to-cart/<%= data.Entrees[1].id %>" id ="chicken">
+              <input type="button" class="addcart" value="COMMANDER">
+            </a>
+        </div>
+      </div>
+      <div class="menu">
+      </div>
+	  </div>
+    <div id="contenu_boissons">
+      <h1 class=titre>LES BOISSONS</h1>
+      <hr/>
+      <% for (let i = 0; i < data.Boissons.length; i++){ 
+        if (i%2 == 0) {%>
+          <div class=menu>
+            <% } %>
+            <div class=cadre>
+              <img src="images/<%= data.Boissons[i].nom %>.jpg" class="food">
+              <div class="description">
+                <h1><%= data.Boissons[i].nom %></h1>
+                <p>
+                  Boisson rafraichissante, taille variable.<br>
+                  <br>
+                  <br>
+                </p>
+                <div id="deroule">
+                  <% let y = 0;
+                     for (let x = 0; x < 5; x++) {
+                        y = x + i;%>
+                        <input type="hidden" id= "<%= y %>pb" 
+                        value="<%= data.Boissons[y].prix %>">
+                        <input type="hidden" id= "<%= y %>idb" 
+                        value="<%= data.Boissons[y].id %>">
+                  <% } %>
+                  <select id="TailleB<%= i %>">
+                    <option value="" selected disabled hidden>Taille</option>
+                    <option value="<%= i %>">
+                      <%= data.Boissons[i].cl %>cl
+                    </option>
+                    <%let j = i;
+                      i += 1; %>
+                    <option value="<%= i %>">
+                      <%= data.Boissons[i].cl %>cl
+                    </option>
+                    <%i += 1; %>
+                    <option value="<%= i %>">
+                      <%= data.Boissons[i].cl %>cl
+                    </option>
+                    <%i += 1; %>
+                    <option value="<%= i %>">
+                      <%= data.Boissons[i].cl %>cl
+                    </option>
+                    <%i += 1; %>
+                    <option value="<%= i %>">
+                      <%= data.Boissons[i].cl %>cl
+                    </option>
+                  </select>
+                </div>
+                <div class="prix" id="prixB<%= j %>">
+                  <%= data.Boissons[j].prix %>€</div>
+              </div>
+              <a href="add-to-cart/<%= data.Boissons[j].id %>" 
+                id="addB<%= j %>">
+                <input type="button" class="addcart" id="" value="COMMANDER">
+              </a>
+            </div>
+            <% if (i%2 != 0){ %>
+          </div>
+        <% }
+          } %>
+    </div>
+  </body>
+</html>

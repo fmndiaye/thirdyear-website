@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+	  <meta charset="utf-8">
+	  <title>PIZZERIA ONLINE | PANIER</title>
+	  <script src="jquery-3.6.0.js"></script>
+	  <script src="bootstrap.min.js"></script>
+	  <script src="header.js"></script>
+	  <link rel="stylesheet" href="bootstrap.min.css">
+	  <link rel="stylesheet" href="panier.css">
+  </head>
+  <body>
+  	<div id="included"></div>
+  	<div id="error"></div> <!--Affiche l'erreur trouver-->
+    <% if (data.articles == null || data.qtéTotal == 0) { %>
+      <div id="empty">
+        <img src="images/panier.png" id="photo">
+        <h1> Votre panier est vide...</h1>
+        <p>Profitez de nos meilleurs plats pour le remplir !</p>
+        <a href="/carte">
+          <input type="button" id="continue" value="Continuer mes achats">
+        </a>
+      </div>
+    <% } else { %>
+  	  <div class="form">
+        <div id="haut">
+          <h1> MON PANIER </h1>
+          <p id ="combien"><%= data.qtéTotal %> article(s)</p>
+        </div>
+  	    <form id="panier">
+  	      <table class="tab">
+  	  	    <thead id="donnees"> 
+  	  	      <tr>
+                <th scope="col">Article(s)</th>
+  	  		      <th scope="col">Quantité</th>
+  	  		      <th scope="col">Prix</th>
+  	  	      </tr>
+  	  	    </thead>
+  	  	    <tbody id="donneesTB">
+              <% data.articles.forEach(article=>{ %>
+                <tr id ="ligne">
+                  <th scope="row"><%= article.item.nom %></th>
+                  <td>
+                    <div id="quantité">
+                      <a href="/remove-from-cart/<%= article.item.id %>">
+                        -
+                      </a>
+                      &nbsp<%= article.qté %>&nbsp
+                      <!-- pour espacer le - et + -->
+                      <a href="/add-to-cart/<%= article.item.id %>">
+                        +
+                      </a>
+                    </div>
+                  </td>
+                  <td><strong><%= article.prix %>€</strong></td>
+                </tr>
+              <% }) %>  
+            </tbody>
+  	      </table>
+        </form>
+        <p id="prixtotal">Total: <strong><%= data.prixTotal %>€</strong></p>
+        <a href="/valide-cart" id="valide">
+          <input type="button" value="COMMANDER">
+        </a>
+        <a href="/empty-cart" id="vide">
+          <input type="button" value="VIDER LE PANIER">
+        </a>
+  	  </div>
+    <% } %>
+  </body>
+</html>
