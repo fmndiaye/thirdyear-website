@@ -1,0 +1,7 @@
+nom,size,ingre1,ingre2,ingre3,ingre4,ingre5,ingre6,prix
+4 Fromage,Petite,Parmesan,Gorgonzola,Mozzarella,Fromage De Chèvre,Tomate,,6.49
+4 Fromage,Moyenne,Parmesan,Gorgonzola,Mozzarella,Fromage De Chèvre,Tomate,,8.99
+4 Fromage,Petite,Parmesan,Gorgonzola,Mozzarella,Fromage De Chèvre,,,11.49
+Orientale,Petite,Tomate,Mozzarella,Merguez,Ognion,Poivron,,6.49
+Orientale,Moyenne,Tomate,Mozzarella,Merguez,Ognion,Poivron,,8.99
+Orientale,Grande,Tomate,Mozzarella,Merguez,Ognion,Poivron,,11.49

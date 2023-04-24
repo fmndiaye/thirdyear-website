@@ -1,0 +1,105 @@
+#contenu_entrees{
+	display: none;
+}
+
+#contenu_boissons{
+	display: none;
+}
+
+.titre{
+	text-align: center;
+	margin-right: 56%;
+	margin-top: 10px;
+	margin-bottom: -10px;
+}
+
+hr {
+	display: block;
+	height: 1px;
+	border-top: 1px solid black;
+	width: 1305px;
+}
+
+.menu{
+	margin: auto;
+	text-align: center;
+}
+
+.cadre{
+	display: inline-block;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #ccc;
+	width: 630px;
+	height: 302px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.food{
+	float: left;
+	width: 300px;
+	height: 300px;	
+	margin-right: 2%;
+}
+
+.description{
+	margin-top: 2%;
+	text-align: left
+}
+
+.description h1{
+	font-size: 25px;
+}
+
+.prix{
+	font-size: 25px;
+	margin-top: 16%;
+	margin-left: 50%;
+}
+
+.addcart{
+	position: relative;
+	top: -12%;
+	left: 40%;
+}
+
+#deroule{
+	position: relative;
+	left: 210px;
+}
+
+.prix2{
+	font-size: 25px;
+	margin-top: 16%;
+	margin-left: 0;
+}
+
+@media (max-width: 767px) { /* xs, Téléphone */
+	.cadre{
+		width: 480px;
+		height: 250px;
+	}
+
+	.food{
+		width: 150px;
+		height: 150px;
+	}
+
+	.prix{
+		margin-left: 1%;
+		margin-top: 10%;
+	}
+
+	.prix2{
+		font-size: 25px;
+		margin-top: 10%;
+		margin-left: 0;
+	}
+
+	.addcart{
+		top: -13%;
+		left: 37%;
+	}
+
+}

@@ -1,0 +1,76 @@
+#empty{
+	text-align: center;
+}
+
+#haut h1, #haut p{
+	display: inline;
+}
+
+#haut h1{
+	font-size: 25px;
+}
+
+#combien{
+	font-size: 18px;
+	margin-left: 40px;
+}
+
+div.form{
+	display: block;
+	text-align: center;
+}
+
+#panier{
+	margin-top: 10px;
+	display: inline-block;
+	border: solid;
+	border-width: 2px;
+	border-color: black;
+}
+
+.tab td{
+	border-left: 20px solid white;
+	border-right: 10px solid white;
+}
+
+.tab th{
+	border-left: 10px solid white;
+}
+
+#quantité{
+	border: solid;
+	border-width: 1px; 
+}
+
+#quantité a{
+	text-decoration: none;	
+	color: black;
+}
+
+#photo{
+	width: 300px;
+	height: 300px;
+	margin-left: 3%;
+}
+
+#continue{
+	text-align: center;
+	left: 50%;
+}
+
+#prixtotal{
+	font-size: 20px;
+	margin-left: 165px;
+}
+
+#valide{
+	margin-right: 23px;
+}
+
+#valide a{
+	text-decoration: none;
+}
+
+#vide{
+	margin-left: 1px;
+}

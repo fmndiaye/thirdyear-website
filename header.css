@@ -1,0 +1,244 @@
+.head{
+	display: flex;
+	padding: 4px 10px;
+	background-color: #090909;
+}
+
+.PizzaLogo{
+	color: red;
+}
+
+@font-face{
+	font-family: "Komika";
+	src: url("KOMIKAX_.ttf") format("truetype");
+}
+
+#title{
+	width: 400px;
+	font-family: Komika, sans-serif;
+	color: white;
+	margin-right: -20%;
+}
+
+.navigateur{
+	margin: auto;
+	font-family: Komika, sans-serif;
+	/* overflow: hidden; Cache le contenu qui dépasse du bloc*/
+}
+
+.navigateur a{
+	font-size: 20px;
+	color: white;
+	padding: 16px;
+	text-decoration: none;
+}
+
+.navigateur a:hover{
+	background-color: black;
+}
+
+.navigateur a:active{
+	background-color: red;
+}
+
+.login{
+	margin: auto; 
+	margin-left: -15%; 
+	margin-right: 10%; 
+	font-family: Komika, sans-serif;
+}
+
+.login a{
+	font-size: 20px;
+	color: white;
+	padding: 16px;
+	text-decoration: none;
+}
+
+.login a:hover{
+	background-color: black;
+}
+
+.login a:active{
+	background-color: red;
+}
+
+.cart{
+	margin: auto;
+	margin-left: -8%;
+	margin-right: 2%;
+	font-family: Komika, sans-serif; 
+}
+
+.cart img{
+	width: 50px;
+	height: 50px;
+}
+
+.cart a{
+	font-size: 20px;
+	color: white;
+	padding: 16px;
+	text-decoration: none;
+}
+
+.cart a:hover{
+	background-color: black;
+}
+
+.cart a:active{
+	background-color: red;
+}
+
+.badge{
+	font-family: Ariel, sans-serif;
+	color: white;
+	position: absolute;
+	margin-top: 7px;
+	margin-left: 16px;
+	background-color: red;
+	border-radius: 50%;
+}
+
+@media (max-width: 767px) { /* xs, Téléphone */
+
+	#title{
+		width: 100px;
+	}
+
+	#title h1{
+		font-size: 15px;
+	}
+
+	.PizzaLogo{
+		display:block;
+	}
+
+	.navigateur{
+		margin-bottom: 15px;
+	}
+
+	.navigateur a{
+		font-size: 10px;
+		padding: 19px 1px;
+	}
+
+	.login {
+		margin-bottom: 15px;
+	}
+
+	.login a{
+		font-size: 10px;
+		padding: 19px 1px; 
+	}
+
+	.cart{
+		margin-bottom: 10px;
+	}
+
+	.cart img{
+		width: 25px;
+		height: 25px;
+	}
+
+	.cart a{
+		font-size: 10px;
+		padding: 19px 1px; 
+	}
+
+	.badge{
+		font-size: 8px;
+		margin-left: 0px;
+		margin-top: 5px;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 991px){ /* sm, Tablette */
+	#title{
+		margin-right: -42%;
+	}
+	#title h1{
+		font-size: 22px;
+	}
+
+	.navigateur{
+		margin-bottom: 10px;
+	}
+
+	.navigateur a{
+		font-size: 12px;
+		padding: 13px 1px;
+	}
+
+	.login{
+		margin-bottom: 10px;
+	}
+
+	.login a{
+		font-size: 12px;
+		padding: 13px 1px;
+	}
+
+	.cart{
+		margin-bottom: 3px;
+	}
+
+	.cart img{
+		height: 30px;
+		width: 30px;
+	}
+
+	.cart a{
+		font-size: 12px;
+		padding: 13px 1px;
+	}
+
+	.badge{
+		font-size: 8px;
+		margin-left: 1px;
+		margin-top: 2px;
+	}
+}
+
+@media (min-width: 991px) and (max-width: 1199px){ /* md, Ordinateur portable*/
+	#title{
+		margin-right: -27%;
+	}
+	#title h1{
+		font-size: 30px;
+	}
+
+	.navigateur{
+		margin-bottom: 11px;
+	}
+
+	.navigateur a{
+		font-size: 15px;
+		padding: 14px 1px;
+	}
+
+	.login{
+		margin-bottom: 11px;
+	}
+
+	.login a{
+		font-size: 15px;
+		padding: 14px 1px;
+	}
+
+	.cart img{
+		height: 35px;
+		width: 35px;
+	}
+
+	.cart a{
+		font-size: 15px;
+		padding: 14px 1px;
+	}
+
+	.badge{
+		font-size: 10px;
+		margin-left: 1px;
+		margin-top: 2px;
+	}
+}

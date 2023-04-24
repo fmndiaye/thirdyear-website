@@ -1,0 +1,13 @@
+nom,prix
+Ketchup,0.29
+Mayonaise,0.29
+Moutarde,0.29
+Biggie,0.29
+Blanche,0.29
+Burger,0.29
+Fromagère,0.29
+Algerienne,0.29
+Samourai,0.29
+Harissa,0.29
+Barbecue,0.29
+Curry,0.29

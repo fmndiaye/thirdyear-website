@@ -1,0 +1,3 @@
+nom,prix,
+Salade Ceasar,2.99
+Chicken Wings,4.99

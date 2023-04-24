@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+	<meta charset="utf-8">
+	<title>PIZZERIA ONLINE | CONFIRMATION</title>
+	<script src="jquery-3.6.0.js"></script>
+	<script src="bootstrap.min.js"></script>
+	<script src="header.js"></script>
+	<link rel="stylesheet" href="bootstrap.min.css">
+	<link rel="stylesheet" href="valider.css">
+  </head>
+  <body>
+    <div id="included"></div>
+  	<div id="error"></div> <!--Affiche l'erreur trouver-->
+  	<div class="form">
+  	  <h1>Veuillez enregistrer vos coordonnées:</h1>
+  	  <form id="formulaire" method="post" action="isvalid">
+  	    <table id="tab">
+  	      <tbody>
+          	<tr>
+              <th scope="row">Nom*</th>
+              <td><input type="text" id="name" name="nom" 
+              	placeholder="Nom" required></td>
+            </tr>
+            <tr>
+              <th scope="row">Prénom*</th>
+              <td><input type="text" id="fname" name="prenom" 
+              	placeholder="Prénom" required></td>
+            </tr>
+            <tr>
+              <th scope="col">Adresse*</th>
+              <td><input type="text" id="addr" name="address" 
+              	placeholder="N° et nom de rue" required></td>
+            </tr>
+            <tr>
+              <th scope="col">Complément d'adresse (falcutatif)</th>
+              <td><input type="text" id="address2" name="address2"
+              	placeholder="Apt, suite étage"></td>
+            </tr>
+            <tr>
+              <th scope="col">Ville*</th>
+              <td><input type="text" id="city" name="ville" 
+              	placeholder="Ville" required></td>
+            </tr>
+            <tr>
+              <th scope="col">Code postal*</th>
+              <td><input type="number" id="zcode" name="zipcode" 
+              	placeholder="Code postal" required></td>
+            </tr>
+            <tr>
+              <th scope="col">Code de l'immeuble*</th>
+              <td><input type="number" id="ecode" name="code" 
+              	placeholder="Code" required></td>
+            </tr>
+            <tr>
+              <th scope="col">Numéro de téléphone*</th>
+              <td><input type="number" id="phonenb" name="phone" 
+              	placeholder="Numéro de téléphone" required></td>
+            </tr>
+            <tr>
+              <th scope="col">Adresse email*</th>
+              <td><input type="email" id="email" name="email" 
+              	placeholder="Email" required></td>
+          	</tr>
+          	<tr>
+              <th scope="col">Heure de livraison (disponible 24h/24h)*</th>
+              <td><input type="time" id="livraison" name="time" required></td>
+         	</tr>
+          </tbody>
+        </table>
+        <input type="submit" id="valider">
+  	  </form>
+  	</div>
+  </body>

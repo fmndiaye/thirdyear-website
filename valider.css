@@ -1,0 +1,27 @@
+div.form{
+	display: block;
+	text-align: center;
+}
+
+#formulaire{
+	margin-top: 1px;
+	display: inline-block;
+}
+
+#tab{
+	text-align: left;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* enleve les fleche de input="number" pour Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* enleve les fleche de input="number" pour Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}

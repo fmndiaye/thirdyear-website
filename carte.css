@@ -1,0 +1,63 @@
+.h{	
+	display: flex;
+	padding: 4px 10px;
+	background-color: #333;
+}
+
+@font-face{
+	font-family: "Komika";
+	src: url("KOMIKAX_.ttf") format("truetype");
+}
+
+.nav2{
+	margin: auto;
+	font-family: Komika, sans-serif;
+	/* overflow: hidden; Cache le contenu qui dépasse du bloc*/
+}
+
+.nav2 a{
+	font-size: 20px;
+	color: white;
+	padding: 3px 16px;
+	text-decoration: none;
+}
+
+.nav2 a:hover{
+	background-color: red;
+	color: white;
+	text-decoration: none;
+}
+
+@media (max-width: 767px) { /* xs, Téléphone */
+	.nav2{
+		margin: auto;
+		margin-bottom: 7px;
+	}
+
+	.nav2 a{
+		font-size: 10px;
+		padding: 11px 1px;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 991px){ /* sm, Tablette */
+	.nav2{
+		margin-bottom: 4px;
+	}
+
+	.nav2 a{
+		font-size: 12px;
+		padding: 8px 1px;
+	}
+}
+
+@media (min-width: 991px) and (max-width: 1199px){ /* md, Ordinateur portable */
+	.nav2{
+		margin-bottom: 0.05%;
+	}
+
+	.nav2 a{
+		font-size: 15px;
+		padding: 4px 1px;
+	}
+}

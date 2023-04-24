@@ -1,0 +1,15 @@
+nom,prix
+parmesan,1.50
+Gorgonzola,1.50
+Mozzarella,1.50
+Fromage de chèvre,1.50
+Merguez,1.50
+Saucission,1.50
+Peperonni,1.50
+Champignon,1.50
+Tomate,1.50
+Olive,1.50
+Origan séché,1.50
+Ognion,1.50
+Poivron,1.50
+Jambon,1.50
